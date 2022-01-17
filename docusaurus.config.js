@@ -51,10 +51,34 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'Design/DesignDiagram',
             position: 'left',
-            label: 'Docs',
+            label: 'Design',
           },
+          {
+            type: 'doc',
+            docId: 'Roadmap/introduction',
+            position: 'left',
+            label: 'Roadmap',
+          },
+          {
+            type: 'doc',
+            docId: 'XFS Interface/introduction',
+            position: 'left',
+            label: 'XFS Interface',
+          },
+          // {
+          //   type: 'doc',
+          //   docId: 'intro',
+          //   position: 'left',
+          //   label: 'Road Map',
+          // },
+          // {
+          //   type: 'doc',
+          //   docId: 'intro',
+          //   position: 'left',
+          //   label: 'Tutorial',
+          // },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/nitcbase',
