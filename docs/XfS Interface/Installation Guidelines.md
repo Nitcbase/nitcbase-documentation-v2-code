@@ -96,20 +96,23 @@ The following are the instructions for installation in linux/unix environments:
 
 
 ## Files and Directories
-* Sample data files and run files will be present in the `/Files` directory
-* Output files from operations such as: `dump` and `export` will be created at  `/Files` directory
-* Input files for operations such as: `import` and `insert from file` will also be fetched from the `/Files` directory
+
+* `Files/` : contains the  following three subdirectories to store various files used in NITCbase.
+    1. `Batch_Execution_Files/`: contains batch execution([`run`](../NITCbase_Commands.md#batch-execution) operation) script files should be in this folder
+    2. `Input_Files/`: contains csv data files used in [`import`](../NITCbase_Commands.md#import-relation) operation and [`insert from file`](../NITCbase_Commands.md#insert-into-table-from-file) operation.
+    3. `Output_Files/`: contains ouput files created from [`export`](../NITCbase_Commands.md#export-relation) operation and [`dump`](../NITCbase_Commands.md#dump-block-allocation-map) operations
 
   :::note
-    We can use folders within `/Files` to organize the run files. In that case, `run folder_name/run_file` format can be used.
+    We can use sub-folders within `/Batch_Execution_Files` to organize the run files. In that case, `run sub_folder_name/run_file` format can be used.
   :::
 
-* Notable directories include:
+* Other notable directories include:
   * `Disk/` : contains the `disk` binary file on which NITCbase Disk is simulated.
   *  `Disk_Class/` : contains the `Disk.cpp` file which encompasses the Disk Class described in the Physical Layer. Students should **only** use the Disk Class Object instantiation for doing disk acceess (read & write and create & destroy)
   *  `define/` : contains the global constants.
   *  `Frontend_Interface/` : contains the `Frontend.cpp` and `frontend-runner.cpp` files. Refer [Frontend Interface section](../Design/Frontend/introduction.md) to know more. Students need not edit the `frontend-runner.cpp` file rather, can start from the methods of Frontend C++ Class in `Frontend.cpp` for lower layer function call invocations.
   *  `XFS_Interface/` : contains the `build.sh` script file for building XFS Interface. Once built succesfully, the `XFS-Interface` executable will be present here.
+
 
 * The entire folder structure is as follows:
   ```bash
@@ -124,12 +127,9 @@ The following are the instructions for installation in linux/unix environments:
   ├── Dockerfile_frontend
   ├── Dockerfile_xfs
   ├── Files
-  │   ├── 10000nums.csv
-  │   ├── 10000nums_1.csv
-  │   ├── 10000nums_2.csv
-  │   .
-  │   .
-  │   .
+  │   ├── Batch_Execution_Files
+  │   ├── Input_Files
+  │   ├── Output_Files
   ├── Frontend_Interface
   │   ├── CMakeLists.txt
   │   ├── Frontend.cpp
